@@ -1,0 +1,35 @@
+﻿@model LoginViewModel
+
+
+<section class="register">
+    <div class="container">
+        <div class="login-menu">
+            <a class="login-link" asp-controller="Account" asp-action="register">Registrera</a>
+        </div>
+        <div class="login-form">
+            <div class="col-6">
+
+                <form method="post" novalidate>
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label"></label>
+                        <input asp-for="Email" class="form-Control" />
+                        <small><span asp-validation-for="Email" class="text-danger"></span></small>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label"></label>
+                        <input asp-for="Password" class="form-Control" />
+                        <small><span asp-validation-for="Password" class="text-danger"></span></small>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success mt-2">Logga in</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
