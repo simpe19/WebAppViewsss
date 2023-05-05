@@ -29,6 +29,14 @@ html, body {
   right: 0;
 }
 
+.validation-summary-errors ul {
+  color: #FA3150;
+  list-style: none;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+}
+
 .btn-toggle {
   cursor: pointer;
   font-family: "Poppins", sans-serif;
@@ -927,58 +935,136 @@ footer .container {
   }
 }
 
-.register .container {
-  padding-top: 20px;
-  display: block;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-}
-.register .login-menu {
-  margin-top: 100px;
+.Allproducts .container {
+  padding-top: 150px;
   display: flex;
   justify-content: center;
 }
-.register .login-form {
-  padding-top: 50px;
-  display: flex;
-  justify-content: center;
-}
-.register .register-form {
-  padding-top: 50px;
-  margin-bottom: 50px;
-  display: flex;
-  justify-content: center;
-}
-.register .login-link {
-  font-family: "Poppins", sans-serif;
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  color: #000000;
-  font-weight: 500;
-}
-.register .login-link:hover {
-  background-color: #FA3150;
+
+.login-form {
+  padding: 20px 0 60px 0;
 }
 @media (min-width: 992px) {
-  .register .login-link {
-    padding: 20px;
-    font-size: 24px;
+  .login-form {
+    padding: 100px 0;
   }
-  .register .login-link:hover {
-    background-color: transparent;
-    color: #FA3150;
+}
+.login-form .container {
+  border: 0px solid #E1E1E1;
+  padding: 30px;
+  margin-bottom: 200px;
+}
+@media (min-width: 768px) {
+  .login-form .container {
+    border: 1px solid #E1E1E1;
+  }
+}
+.login-form .title {
+  margin-bottom: 40px;
+}
+.login-form form {
+  display: grid;
+  column-gap: 30px;
+  row-gap: 30px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "email" "password" "rememberme" "button";
+}
+.login-form form .email {
+  grid-area: email;
+}
+.login-form form .password {
+  grid-area: password;
+}
+.login-form form .rememberme {
+  grid-area: rememberme;
+  margin: 10px 0;
+}
+.login-form form button {
+  grid-area: button;
+}
+@media (min-width: 992px) {
+  .login-form form button {
+    display: flex;
+    justify-self: flex-start;
   }
 }
 
-.validation-summary-errors {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
+.register-form {
+  padding: 20px 0 60px 0;
 }
-.validation-summary-errors ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+@media (min-width: 992px) {
+  .register-form {
+    padding: 100px 0;
+  }
+}
+.register-form .container {
+  border: 0px solid #E1E1E1;
+  padding: 30px;
+}
+@media (min-width: 768px) {
+  .register-form .container {
+    border: 1px solid #E1E1E1;
+  }
+}
+.register-form .title {
+  margin-bottom: 40px;
+}
+.register-form form {
+  display: grid;
+  column-gap: 30px;
+  row-gap: 30px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "firstname" "lastname" "streetname" "postalcode" "city" "mobile" "company" "email" "password" "confirmpassword" "profileimage" "terms" "button";
+}
+@media (min-width: 992px) {
+  .register-form form {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "firstname lastname" "streetname streetname" "postalcode city" "mobile company" "email email" "password password" "confirmpassword confirmpassword" "profileimage profileimage" "terms terms" "button button";
+  }
+}
+.register-form form .firstname {
+  grid-area: firstname;
+}
+.register-form form .lastname {
+  grid-area: lastname;
+}
+.register-form form .streetname {
+  grid-area: streetname;
+}
+.register-form form .postalcode {
+  grid-area: postalcode;
+}
+.register-form form .city {
+  grid-area: city;
+}
+.register-form form .mobile {
+  grid-area: mobile;
+}
+.register-form form .company {
+  grid-area: company;
+}
+.register-form form .email {
+  grid-area: email;
+}
+.register-form form .password {
+  grid-area: password;
+}
+.register-form form .confirmpassword {
+  grid-area: confirmpassword;
+}
+.register-form form .profileimage {
+  grid-area: profileimage;
+}
+.register-form form .terms {
+  grid-area: terms;
+  margin: 10px 0;
+}
+.register-form form button {
+  grid-area: button;
+}
+@media (min-width: 992px) {
+  .register-form form button {
+    display: flex;
+    justify-self: flex-start;
+  }
 }
