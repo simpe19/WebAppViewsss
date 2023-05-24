@@ -42,7 +42,7 @@ public class RegisterViewModel
     [DataType(DataType.Password)]
     [Display(Name = "Password")]
     [Required(ErrorMessage = "You must provide a password")]
-    [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])[A-Za-z\d]{8,}$", ErrorMessage = "You must provide a valid password")]
+    [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s])[a-zA-Z\d\W]{8,}$", ErrorMessage = "You must provide a valid password")]
     public string Password { get; set; } = null!;
 
     [DataType(DataType.Password)]

@@ -23,7 +23,9 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(x =>
     x.SignIn.RequireConfirmedAccount = false;
     x.Password.RequiredLength = 8;
     x.User.RequireUniqueEmail = true;
-}).AddEntityFrameworkStores<IdentityContext>();
+})
+    .AddEntityFrameworkStores<IdentityContext>()
+    .AddClaimsPrincipalFactory<CustomClaimsPrincipalFactory>();
 
 builder.Services.ConfigureApplicationCookie(x =>
 {

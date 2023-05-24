@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApp.Contexts;
 
@@ -11,9 +12,11 @@ using WebApp.Contexts;
 namespace WebApp.Migrations.Identity
 {
     [DbContext(typeof(IdentityContext))]
-    partial class IdentityContextModelSnapshot : ModelSnapshot
+    [Migration("20230516131536_seed userroles")]
+    partial class seeduserroles
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,7 +54,7 @@ namespace WebApp.Migrations.Identity
                     b.HasData(
                         new
                         {
-                            Id = "37b2232a-8c02-4c76-846d-3d2ba4ec650a",
+                            Id = "1",
                             Name = "System Administrator",
                             NormalizedName = "SYSTEM ADMINISTRATOR"
                         });
@@ -146,8 +149,8 @@ namespace WebApp.Migrations.Identity
                     b.HasData(
                         new
                         {
-                            UserId = "470ceb38-9b64-470e-961c-9fe0bb8c0603",
-                            RoleId = "37b2232a-8c02-4c76-846d-3d2ba4ec650a"
+                            UserId = "1",
+                            RoleId = "1"
                         });
                 });
 
@@ -251,19 +254,18 @@ namespace WebApp.Migrations.Identity
                     b.HasData(
                         new
                         {
-                            Id = "470ceb38-9b64-470e-961c-9fe0bb8c0603",
+                            Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4cd9d101-af4e-476b-b235-b0c0cd699943",
-                            Email = "administrator@domain.com",
+                            ConcurrencyStamp = "1f1dcfc2-d808-4c13-9d29-77c50545069f",
                             EmailConfirmed = false,
-                            FirstName = " ",
-                            LastName = " ",
+                            FirstName = "System",
+                            LastName = "Administrator",
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEAg7w+ZFGZlsQUy6VB1zIz87tR7Q4VKCQsRpLGAnQi67/pF4qDjnBXLjktxSSoQ2+g==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIx690C4aL4qsvvJ3Ls2+2uJBWfW0XXBWCq6w3XpVTh/z62Jj+k34mIYn3LewTiTag==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "65ab4eda-2d79-464f-8257-56ca9f8f338f",
+                            SecurityStamp = "d4dba289-2bf7-4028-9806-e70aef43d011",
                             TwoFactorEnabled = false,
-                            UserName = "administrator@domain.com"
+                            UserName = "administrator"
                         });
                 });
 

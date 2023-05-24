@@ -32,7 +32,7 @@ public class ProductService
             return false;
         }
     }
-
+    /*
     public async Task<IEnumerable<ProductModel>> GetAllAsync()
     {
         var products = new List<ProductModel>();
@@ -45,7 +45,7 @@ public class ProductService
         }
         return products;
 
-    }
+    } */
 }
 
 

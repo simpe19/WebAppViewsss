@@ -7,16 +7,16 @@ namespace WebApp.Controllers
     public class ProductsController : Controller
     {
 
-        private readonly ProductService _productService;
+        private readonly TagService _tagService;
 
-        public ProductsController(ProductService productService)
+        public ProductsController(TagService tagService)
         {
-            _productService = productService;
+            _tagService = tagService;
         }
 
-
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            ViewBag.Tags = await _tagService.GetTagsAsync();
             return View();
         }
         public IActionResult Search()
@@ -28,18 +28,16 @@ namespace WebApp.Controllers
         {
             return View();
         }
-
+        
         [HttpPost]
-        public async Task<IActionResult> Register(ProductRegistrationViewModel productRegistrationViewModel)
+        public async Task<IActionResult> Register(ProductRegistrationViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
-                if (await _productService.CreateAsync(productRegistrationViewModel))
-                    return RedirectToAction("Index", "Products");
 
-                ModelState.AddModelError("", "Något gick fel");
             }
+            ViewBag.Tags = await _tagService.GetTagsAsync();
             return View();
-        }
+        } 
     }
 }

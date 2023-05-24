@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApp.Contexts;
 
@@ -11,9 +12,11 @@ using WebApp.Contexts;
 namespace WebApp.Migrations.Identity
 {
     [DbContext(typeof(IdentityContext))]
-    partial class IdentityContextModelSnapshot : ModelSnapshot
+    [Migration("20230516130726_Seed User")]
+    partial class SeedUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,7 +54,7 @@ namespace WebApp.Migrations.Identity
                     b.HasData(
                         new
                         {
-                            Id = "37b2232a-8c02-4c76-846d-3d2ba4ec650a",
+                            Id = "5c53708f-c4a2-4065-b548-d0a905e4a196",
                             Name = "System Administrator",
                             NormalizedName = "SYSTEM ADMINISTRATOR"
                         });
@@ -142,13 +145,6 @@ namespace WebApp.Migrations.Identity
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = "470ceb38-9b64-470e-961c-9fe0bb8c0603",
-                            RoleId = "37b2232a-8c02-4c76-846d-3d2ba4ec650a"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -251,19 +247,18 @@ namespace WebApp.Migrations.Identity
                     b.HasData(
                         new
                         {
-                            Id = "470ceb38-9b64-470e-961c-9fe0bb8c0603",
+                            Id = "bb89850d-ad5d-442b-92cb-2a4bfea43410",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4cd9d101-af4e-476b-b235-b0c0cd699943",
-                            Email = "administrator@domain.com",
+                            ConcurrencyStamp = "b8ceec9d-bbc4-4d76-b1bd-5fd5f86c700b",
                             EmailConfirmed = false,
-                            FirstName = " ",
-                            LastName = " ",
+                            FirstName = "System",
+                            LastName = "Administrator",
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEAg7w+ZFGZlsQUy6VB1zIz87tR7Q4VKCQsRpLGAnQi67/pF4qDjnBXLjktxSSoQ2+g==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEYX51nlyvsIXMLYtJAXxOmfc3IBGHclhkjFGXoMEsYGJW1gqkAHz1U7C8cF5lHhLw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "65ab4eda-2d79-464f-8257-56ca9f8f338f",
+                            SecurityStamp = "bc0820b5-143c-4987-bbee-54912f07d101",
                             TwoFactorEnabled = false,
-                            UserName = "administrator@domain.com"
+                            UserName = "administrator"
                         });
                 });
 

@@ -8,7 +8,19 @@
         </nav>
         <nav class="menu-icons">
             <a class="link" asp-controller="Products" asp-action="Search"><i class="fa-regular fa-search"></i></a>
-            <a class="link" asp-controller="Login" asp-action="Index">Login</a>
+
+            @if (signInManager.IsSignedIn(User))
+            {
+                <a class="link" asp-controller="account" asp-action="index">@User.Identity?.Name</a>
+                <a class="link" asp-controller="logout" asp-action="index">Logout</a>
+            } 
+            else
+            {
+                <a class="link" asp-controller="login" asp-action="index">Login</a>
+            }
+            
+
+
             <a class="link" asp-controller="Cart" asp-action="Index"><i class="fa-solid fa-cart-shopping"></i></a>
         </nav>
         <div class="toggle">
